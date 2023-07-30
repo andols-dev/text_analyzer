@@ -1,6 +1,6 @@
 import pyperclip
 class TextAnalyzer:
-    def text_analyzer(self,sentence,keywords):
+    def text_analyzer(self,text,keywords):
         raise NotImplementedError("Denna del av koden är inte implementerad ännu.")
 
 def main():
