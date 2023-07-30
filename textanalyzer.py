@@ -4,7 +4,7 @@ class TextAnalyzer:
         raise NotImplementedError("Denna del av koden är inte implementerad ännu.")
 
 def main():
-    analyse = TextAnalyzer()
+    analyze = TextAnalyzer()
     print("Welcome to text analyzer")
     print("Copy text from, for example, a webpage or document.")
     print("Add keyword that you want look for. Use space between every keyword")
