@@ -6,15 +6,14 @@ def main():
     analyze = TextAnalyzer()
 
     print("Welcome to text analyzer")
-    print("Copy text from, for example, a webpage or document.")
 
-
-    # The text that user copies will be added to clipboard and will be inserted in sentence
-    sentence = input("add text that you want to analyze")
+    sentence = input("Add text that you want to analyze and press enter: ")
 
 
 
-    keyword_input = input("Add keyword that you want look for. Use space between every keyword")
+    keyword_input = input("Add keyword that you want look for. Use space between every keyword: ")
+
+    keywords = keyword_input.split()
     raise NotImplementedError("Denna del av koden är inte implementerad ännu.")
 
 
