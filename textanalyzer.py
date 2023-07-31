@@ -20,6 +20,10 @@ def main():
     print("Welcome to text analyzer")
 
     text = input("Add text that you want to analyze and press enter: ")
+
+    while not text.strip():
+        print("Error: You must enter text to analyze")
+        text = input("Add text that you want to analyze and press enter: ")
     analyze.how_manywords(text)
 
     print(f"unique words: {analyze.count_unique_words(text)}")
