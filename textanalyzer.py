@@ -1,7 +1,7 @@
 class TextAnalyzer:
     def how_manywords(self,text):
         sentence_map = {}
-
+        print("Occurrences of each word in the text")
         for word in text.split():
             sentence_map[word] = 1 + sentence_map.get(word, 0)
 
@@ -14,6 +14,7 @@ def main():
 
     text = input("Add text that you want to analyze and press enter: ")
     analyze.how_manywords(text)
+
 
 
 
