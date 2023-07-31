@@ -7,6 +7,13 @@ class TextAnalyzer:
 
         for word,count in sentence_map.items():
             print(f"{word}: {count}")
+
+    def count_unique_words(self,text):
+        unique_words = set()
+        for word in text.split():
+            unique_words.add(word.tolower())
+        return len(unique_words)
+
 def main():
     analyze = TextAnalyzer()
 
