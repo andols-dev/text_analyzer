@@ -3,7 +3,7 @@ class TextAnalyzer:
         sentence_map = {}
         print("Occurrences of each word in the text")
         for word in text.split():
-            sentence_map[word] = 1 + sentence_map.get(word, 0)
+            sentence_map[word.lower()] = 1 + sentence_map.get(word, 0)
 
         for word,count in sentence_map.items():
             print(f"{word}: {count}")
@@ -11,7 +11,7 @@ class TextAnalyzer:
     def count_unique_words(self,text):
         unique_words = set()
         for word in text.split():
-            unique_words.add(word.tolower())
+            unique_words.add(word.lower())
         return len(unique_words)
 
 def main():
@@ -21,6 +21,8 @@ def main():
 
     text = input("Add text that you want to analyze and press enter: ")
     analyze.how_manywords(text)
+
+    print(f"unique words: {analyze.count_unique_words(text)}")
 
 
 
