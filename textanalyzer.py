@@ -1,20 +1,25 @@
 class TextAnalyzer:
-    def text_analyzer(self,text,keywords):
-        raise NotImplementedError("Denna del av koden är inte implementerad ännu.")
+    def how_manywords(self,text):
+        sentence_map = {}
 
+        for word in text.split():
+            sentence_map[word] = 1 + sentence_map.get(word, 0)
+
+        for word,count in sentence_map.items():
+            print(f"{word}: {count}")
 def main():
     analyze = TextAnalyzer()
 
     print("Welcome to text analyzer")
 
-    sentence = input("Add text that you want to analyze and press enter: ")
+    text = input("Add text that you want to analyze and press enter: ")
+    analyze.how_manywords(text)
 
 
 
-    keyword_input = input("Add keyword that you want look for. Use space between every keyword: ")
+    #keyword_input = input("Add keyword that you want look for. Use space between every keyword: ")
 
-    keywords = keyword_input.split()
-    raise NotImplementedError("Denna del av koden är inte implementerad ännu.")
+    #keywords = keyword_input.split()
 
 
 if __name__ == "__main__":
