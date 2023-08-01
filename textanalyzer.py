@@ -42,5 +42,21 @@ def main():
         print("x. Exit program")
 
         choice = input("Enter the letter of the option you want to run and press enter: \n")
+
+        if choice == 'a':
+            while True:
+                try:
+                    num_words = int(input("How many of the most common words do you want to see? Enter a number: "))
+                    if num_words <= 0:
+                        print("Please enter a positive number")
+                    else:
+                        break
+                except ValueError:
+                    print("Invalid input. Please enter a number")
+
+            common_words = analyzer.most_common_words(text, num_words)
+            print("Most common words in the text:")
+            for word, count in common_words:
+                print(f"{word}: {count}")
 if __name__ == "__main__":
     main()
