@@ -24,48 +24,23 @@ class TextAnalyzer:
         return sorted_word_freq[:num_words]
 
 def main():
-    analyze = TextAnalyzer()
+    analyzer = TextAnalyzer()
 
-    print("Welcome to text analyzer")
+    print("Welcome to textanalyzer")
 
     while True:
-        text = input("Add text that you want to analyze and press enter: ")
+        text = input("Add text that you want to analyze and press enter: \n")
         if text.strip():
             break
         print("Error: You must enter text to analyze")
 
     while True:
-        try:
-            num_words = int(input("Enter the number of most common words to display: "))
-            if num_words <= 0:
-                print("Please enter a positive number")
-            else:
-                break
-        except ValueError:
-            print("Invalid input. Please enter a number")
+        print("\nChoose an option:")
+        print("a. Most common words")
+        print("b. Count unique words")
+        print("c. Occurrences of each word")
+        print("x. Exit program")
 
-    common_words = analyze.most_common_words(text, num_words)
-    print("Most common words in the text:")
-    for word, count in common_words:
-        print(f"{word}: {count}")
-
-    all_analyzed = False
-    while True:
-        choice = input("Do you want to run analysis methods (yes/no): ")
-        if choice.lower() == 'yes':
-            if not all_analyzed:
-                print(f"Unique words: {analyze.count_unique_words(text)}")
-                analyze.how_manywords(text)
-                all_analyzed = True
-            else:
-                print("All analysis methods have already been run.")
-                break
-        elif choice.lower() == 'no':
-            break
-        else:
-            print("Invalid input. Please enter 'yes' or 'no'.")
-
-
-
+        choice = input("Enter the letter of the option you want to run and press enter: \n")
 if __name__ == "__main__":
     main()
