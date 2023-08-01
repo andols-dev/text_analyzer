@@ -58,5 +58,15 @@ def main():
             print("Most common words in the text:")
             for word, count in common_words:
                 print(f"{word}: {count}")
+        elif choice == 'b':
+            unique_words_count = analyzer.count_unique_words(text)
+            print(f"Number of unique words: {unique_words_count}")
+
+        elif choice == 'c':
+            analyzer.how_manywords(text)
+
+        elif choice == 'x':
+            print("Exiting...")
+            break
 if __name__ == "__main__":
     main()
