@@ -45,5 +45,20 @@ class TestText(unittest.TestCase):
 
         mock_print.assert_any_call("Occurrences of each word in the text")
 
+    def test_most_common_words(self):
+        analyzer = TextAnalyzer()
+        test_text = "Detta är ett test Bara ett test Ett fungerande test"
+
+        num_words = 2
+
+        expected_output = [
+            ("ett",3),
+            ("test",3)
+        ]
+
+        common_words = analyzer.most_common_words(test_text,num_words)
+
+        self.assertEqual(common_words,expected_output)
+
 if __name__ == '__main__':
     unittest.main()
