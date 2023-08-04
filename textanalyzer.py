@@ -1,11 +1,19 @@
 class TextAnalyzer:
+    #funktion som går att återanvända
+    def make_alpanumeric(self, word):
+        cleaned_text = ''.join(ch for ch in word if ch.isalpha())
+        return cleaned_text
+
     def how_manywords(self, text):
         # This method counts the occurrences of each word in the given text.
         sentence_map = {}
         print("Occurrences of each word in the text")
+
         for word in text.split():
-            # Convert the word to lowercase to make the count case-insensitive
-            sentence_map[word.lower()] = 1 + sentence_map.get(word, 0)
+            #cleaned_text = ''.join(ch for ch in word if ch.isalpha())
+
+            # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
+            sentence_map[self.make_alpanumeric(word).lower()] = 1 + sentence_map.get(word, 0)
 
         for word, count in sentence_map.items():
             # Print each word and its occurrence count
