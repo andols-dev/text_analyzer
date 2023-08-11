@@ -23,17 +23,16 @@ class TextAnalyzer:
         # This method counts the number of unique words in the given text.
         unique_words = set()
         for word in text.split():
-            # Convert the word to lowercase to make the count case-insensitive
-            unique_words.add(word.lower())
+            # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
+            unique_words.add(self.make_alpanumeric(word).lower())
         return len(unique_words)
 
     def most_common_words(self, text, num_words):
         # This method returns the most common words and their occurrence count in the given text.
         word_freq = {}
         for word in text.split():
-            # Convert the word to lowercase to make the count case-insensitive
-            word_lower = word.lower()
-            word_freq[word_lower] = word_freq.get(word_lower, 0) + 1
+            # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
+            word_freq[self.make_alpanumeric(word).lower()] = word_freq.get(self.make_alpanumeric(word).lower(), 0) + 1
 
         # Sort the word frequencies in descending order based on occurrence count
         sorted_word_freq = sorted(word_freq.items(), key=lambda item: item[1], reverse=True)
