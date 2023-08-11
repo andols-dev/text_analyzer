@@ -1,30 +1,38 @@
-# Text Analyzer
+# Text Analyzer Program
 
-## Overview
-Text Analyzer is a Python console application that allows users to analyze text by performing various operations. The program provides three main analysis methods:
+The Text Analyzer program is designed to perform basic text analysis on input text. It offers several text analysis functions, allowing users to understand various aspects of the provided text.
 
-1. **Word Occurrences:** This method counts the occurrences of each word in the input text and displays the results.
+## Features
 
-2. **Count Unique Words:** This method calculates the number of unique words in the input text and prints the count.
+1. **Word Occurrences Count (`how_many_words`)**: This function counts the occurrences of each word in the provided text. It considers each word's case and ensures that only alphanumeric characters are counted.
 
-3. **Most Common Words:** Users can specify the number of most common words they want to display, and the program will output those words along with their occurrence counts in descending order.
+2. **Count Unique Words (`count_unique_words`)**: This function counts the number of unique words in the input text. It treats words case-insensitively and considers only alphanumeric characters.
+
+3. **Most Common Words (`most_common_words`)**: This function identifies and lists the most common words in the input text, along with their occurrence counts. The user can specify the number of common words to display.
 
 ## How to Use
-1. **Welcome Message:** When you run the program, you will be greeted with a welcome message and asked to input the text you want to analyze.
 
-2. **Input Text:** Enter the text you want to analyze, and the program will validate that you have provided some input. If you haven't entered any text, it will prompt you to do so.
+1. **Run the Program**: Execute the program in a Python environment.
 
-3. **Common Words:** Next, you'll be asked to input the number of most common words you want to display. Enter a positive integer to proceed.
+2. **Enter Text**: You'll be prompted to input the text you want to analyze. Ensure that you provide some text before proceeding.
 
-4. **Options Menu:** The program will then ask if you want to run other analysis methods. If you choose "yes," it will display the count of unique words and the occurrences of each word in the text.
+3. **Choose an Option**: Once you've entered the text, the program will present you with options:
+   - Enter `a` to find the most common words.
+   - Enter `b` to count the number of unique words.
+   - Enter `c` to see the occurrences of each word.
+   - Enter `x` to exit the program.
 
-5. **Exiting the Program:** You can choose "no" when asked if you want to run other analysis methods, which will exit the program and display the exit message.
+4. **Option 'a' (Most Common Words)**:
+   - You'll be asked to input the number of most common words you want to see.
+   - The program will then display the most common words along with their occurrence counts.
 
-## Dependencies
-The Text Analyzer program has no external dependencies and is written entirely in Python.
+5. **Option 'b' (Count Unique Words)**:
+   - The program will display the total count of unique words in the input text.
 
-## How to Run
-To run the program, simply execute the `main()` function in the `text_analyzer.py` file. You can run the script from the command line or use an integrated development environment (IDE) to execute the program.
+6. **Option 'c' (Occurrences of Each Word)**:
+   - The program will display each word in the input text along with its occurrence count.
 
-## Note
-The program ensures that valid input is provided for the number of common words, and it will continue to ask for input until a valid positive integer is entered.
+7. **Option 'x' (Exit Program)**:
+   - If you choose this option, the program will exit.
+
+
