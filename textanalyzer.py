@@ -1,19 +1,17 @@
 class TextAnalyzer:
-    #funktion som går att återanvända
-    def make_alpanumeric(self, word):
+    # Reusable function to make the word alphanumeric
+    def make_alphanumeric(self, word):
         cleaned_text = ''.join(ch for ch in word if ch.isalpha())
         return cleaned_text
 
-    def how_manywords(self, text):
+    def how_many_words(self, text):
         # This method counts the occurrences of each word in the given text.
         sentence_map = {}
         print("Occurrences of each word in the text")
 
         for word in text.split():
-            #cleaned_text = ''.join(ch for ch in word if ch.isalpha())
-
             # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
-            sentence_map[self.make_alpanumeric(word).lower()] = 1 + sentence_map.get(word, 0)
+            sentence_map[self.make_alphanumeric(word).lower()] = 1 + sentence_map.get(word, 0)
 
         for word, count in sentence_map.items():
             # Print each word and its occurrence count
@@ -24,7 +22,7 @@ class TextAnalyzer:
         unique_words = set()
         for word in text.split():
             # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
-            unique_words.add(self.make_alpanumeric(word).lower())
+            unique_words.add(self.make_alphanumeric(word).lower())
         return len(unique_words)
 
     def most_common_words(self, text, num_words):
@@ -32,7 +30,7 @@ class TextAnalyzer:
         word_freq = {}
         for word in text.split():
             # Convert the word to lowercase to make the count case-insensitive and make sure it's alphanumeric
-            word_freq[self.make_alpanumeric(word).lower()] = word_freq.get(self.make_alpanumeric(word).lower(), 0) + 1
+            word_freq[self.make_alphanumeric(word).lower()] = word_freq.get(self.make_alphanumeric(word).lower(), 0) + 1
 
         # Sort the word frequencies in descending order based on occurrence count
         sorted_word_freq = sorted(word_freq.items(), key=lambda item: item[1], reverse=True)
@@ -43,7 +41,7 @@ def main():
     # Initialize the TextAnalyzer class
     analyzer = TextAnalyzer()
 
-    print("Welcome to textanalyzer")
+    print("Welcome to Text Analyzer")
 
     # Loop until the user enters valid text to analyze
     while True:
@@ -84,8 +82,8 @@ def main():
             unique_words_count = analyzer.count_unique_words(text)
             print(f"Number of unique words: {unique_words_count}")
         elif choice == 'c':
-            # Run the how_manywords method and display the result
-            analyzer.how_manywords(text)
+            # Run the how_many_words method and display the result
+            analyzer.how_many_words(text)
         elif choice == 'x':
             # Exit the program
             print("Exiting...")
