@@ -50,7 +50,8 @@ class TextAnalyzer:
         sorted_word_freq = sorted(word_freq.items(), key=lambda item: item[1], reverse=True)
         return sorted_word_freq[:num_words]
 
-    def menu(self):
+    @staticmethod
+    def menu():
         """
         Display the menu options.
         """
@@ -109,7 +110,7 @@ def main():
             break
         print("Error: You must enter text to analyze")
 
-    analyzer.menu()
+    TextAnalyzer.menu()
     analyzer.choose_menu_option(text)
 
 
