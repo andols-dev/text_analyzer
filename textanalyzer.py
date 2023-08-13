@@ -1,4 +1,5 @@
 class TextAnalyzer:
+    @staticmethod
     def make_alphanumeric(self, word):
         """
         Make the word alphanumeric.
