@@ -43,21 +43,25 @@ class TextAnalyzer:
             print(f"{menu_option}")
             print("____________________________")
 
+    @staticmethod
+    def choose_how_many_words():
+        while True:
+            try:
+                num_words = int(input("How many of the most common words do you want to see? Enter a number: "))
+                if num_words <= 0:
+                    print("Please enter a positive number")
+                else:
+                    return num_words
+            except ValueError:
+                print("Invalid input. Please enter a number")
+
     def choose_menu_option(self, text):
         while True:
             choice = input("Enter the letter of the option you want to run and press enter: \n")
 
             if choice == 'a':
                 # Get the number of most common words from the user
-                while True:
-                    try:
-                        num_words = int(input("How many of the most common words do you want to see? Enter a number: "))
-                        if num_words <= 0:
-                            print("Please enter a positive number")
-                        else:
-                            break
-                    except ValueError:
-                        print("Invalid input. Please enter a number")
+                num_words = self.choose_how_many_words()
 
                 # Run the most_common_words method and display the result
                 common_words = self.most_common_words(text, num_words)

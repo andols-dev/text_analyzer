@@ -31,7 +31,7 @@ class TestText(unittest.TestCase):
         # Use patch to mock the 'print' function to avoid printing during the test
         with patch('builtins.print') as mock_print:
             # Call the how_manywords method with the test_text
-            analyzer.how_manywords(test_text)
+            analyzer.how_many_words(test_text)
 
         # Assert that the "Occurrences of each word in the text" is printed during the method call
         mock_print.assert_any_call("Occurrences of each word in the text")
@@ -54,7 +54,7 @@ class TestText(unittest.TestCase):
         # Use patch to mock the 'print' function to avoid printing during the test
         with patch('builtins.print') as mock_print:
             # Call the how_manywords method with the test_text
-            analyzer.how_manywords(test_text)
+            analyzer.how_many_words(test_text)
 
         # Assert that the "Occurrences of each word in the text" is printed during the method call
         mock_print.assert_any_call("Occurrences of each word in the text")
