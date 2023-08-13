@@ -13,13 +13,13 @@ class TextAnalyzer:
         Count the occurrences of each word in the given text.
         :param text: The input text.
         """
-        sentence_map = {}
+        word_occurences = {}
         print("Occurrences of each word in the text")
 
         for word in text.split():
-            sentence_map[self.make_alphanumeric(word).lower()] = 1 + sentence_map.get(word, 0)
+            word_occurences[self.make_alphanumeric(word).lower()] = 1 + word_occurences.get(word, 0)
 
-        for word, count in sentence_map.items():
+        for word, count in word_occurences.items():
             print(f"{word}: {count}")
 
     def count_unique_words(self, text):
