@@ -43,6 +43,40 @@ class TextAnalyzer:
             print(f"{menu_option}")
             print("____________________________")
 
+    def choose_menu_option(self, text):
+        while True:
+            choice = input("Enter the letter of the option you want to run and press enter: \n")
+
+            if choice == 'a':
+                # Get the number of most common words from the user
+                while True:
+                    try:
+                        num_words = int(input("How many of the most common words do you want to see? Enter a number: "))
+                        if num_words <= 0:
+                            print("Please enter a positive number")
+                        else:
+                            break
+                    except ValueError:
+                        print("Invalid input. Please enter a number")
+
+                # Run the most_common_words method and display the result
+                common_words = self.most_common_words(text, num_words)
+                print("Most common words in the text:")
+                for word, count in common_words:
+                    print(f"{word}: {count}")
+            elif choice == 'b':
+                # Run the count_unique_words method and display the result
+                unique_words_count = self.count_unique_words(text)
+                print(f"Number of unique words: {unique_words_count}")
+            elif choice == 'c':
+                # Run the how_many_words method and display the result
+                self.how_many_words(text)
+            elif choice == 'x':
+                # Exit the program
+                print("Exiting...")
+                break
+
+
 def main():
     # Initialize the TextAnalyzer class
     analyzer = TextAnalyzer()
@@ -58,37 +92,7 @@ def main():
     analyzer.menu()
 
     # Choose a menu option
-    while True:
-        choice = input("Enter the letter of the option you want to run and press enter: \n")
-
-        if choice == 'a':
-            # Get the number of most common words from the user
-            while True:
-                try:
-                    num_words = int(input("How many of the most common words do you want to see? Enter a number: "))
-                    if num_words <= 0:
-                        print("Please enter a positive number")
-                    else:
-                        break
-                except ValueError:
-                    print("Invalid input. Please enter a number")
-
-            # Run the most_common_words method and display the result
-            common_words = analyzer.most_common_words(text, num_words)
-            print("Most common words in the text:")
-            for word, count in common_words:
-                print(f"{word}: {count}")
-        elif choice == 'b':
-            # Run the count_unique_words method and display the result
-            unique_words_count = analyzer.count_unique_words(text)
-            print(f"Number of unique words: {unique_words_count}")
-        elif choice == 'c':
-            # Run the how_many_words method and display the result
-            analyzer.how_many_words(text)
-        elif choice == 'x':
-            # Exit the program
-            print("Exiting...")
-            break
+    analyzer.choose_menu_option(text)
 
 if __name__ == "__main__":
     main()
