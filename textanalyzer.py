@@ -103,7 +103,6 @@ class TextAnalyzer:
 
 def main():
     analyzer = TextAnalyzer()
-    print("Welcome to Text Analyzer")
     while True:
         text = input("Add text that you want to analyze and press enter: \n")
         if text.strip():
