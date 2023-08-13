@@ -36,13 +36,17 @@ class TextAnalyzer:
         sorted_word_freq = sorted(word_freq.items(), key=lambda item: item[1], reverse=True)
         return sorted_word_freq[:num_words]
 
+    def menu(self):
+        print("\nChoose an option:")
+        menu = ["a. Most common words", "b. Count unique words", "c. Occurrences of each word", "x. Exit program" ]
+        for menu_option in menu:
+            print(f"{menu_option}")
+            print("____________________________")
 
 def main():
     # Initialize the TextAnalyzer class
     analyzer = TextAnalyzer()
-
     print("Welcome to Text Analyzer")
-
     # Loop until the user enters valid text to analyze
     while True:
         text = input("Add text that you want to analyze and press enter: \n")
@@ -50,14 +54,11 @@ def main():
             break
         print("Error: You must enter text to analyze")
 
-    # Main loop to display the menu and execute the chosen analysis method
-    while True:
-        print("\nChoose an option:")
-        print("a. Most common words")
-        print("b. Count unique words")
-        print("c. Occurrences of each word")
-        print("x. Exit program")
+    # Show menu
+    analyzer.menu()
 
+    # Choose a menu option
+    while True:
         choice = input("Enter the letter of the option you want to run and press enter: \n")
 
         if choice == 'a':
@@ -88,7 +89,6 @@ def main():
             # Exit the program
             print("Exiting...")
             break
-
 
 if __name__ == "__main__":
     main()
